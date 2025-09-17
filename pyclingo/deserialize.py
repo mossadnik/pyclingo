@@ -1,6 +1,6 @@
 import typing as typ
 import json
-from clingo.symbol import SymbolType
+from clingo.symbol import SymbolType, Symbol
 from pyclingo.core import Relation, Identifier
 
 
@@ -26,8 +26,8 @@ def deserialize_symbol(symbol, function_cls: dict[str, type]) -> typ.Union[Relat
         raise ValueError(f'Cannot deserialize symbol {symbol}')
 
 
-def deserialize_solution(solution: list, relations: list[type]) -> list:
-    if not isinstance(relations, (list, tuple)):
+def deserialize_solution(solution: typ.Sequence[Symbol], relations: typ.Union[type, typ.Sequence[type]]) -> list[typ.Union[Relation, Identifier]]:
+    if isinstance(relations, type):
         relations = [relations]
     function_cls = {rel.function_name(): rel for rel in relations}
     res = []

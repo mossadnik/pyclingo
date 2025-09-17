@@ -4,6 +4,7 @@ import clingo
 from .core import Relation, Number, String, Identifier, Variable, Rule, BLANK
 from .generate import generate
 from .deserialize import deserialize_solution
+from .exceptions import Unsat
 
 
 def relation(cls):
@@ -43,6 +44,6 @@ def solve(program: list, relations: list[type]) -> list:
     with ctl.solve(yield_=True) as handle:
         model = handle.model()
         if not model:
-            raise RuntimeError('No solution.')
+            raise Unsat('Not satisfiable.')
         solution = model.symbols(atoms=True)
         return deserialize_solution(solution, relations)

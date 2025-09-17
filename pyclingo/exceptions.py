@@ -1,0 +1,4 @@
+
+
+class Unsat(RuntimeError):
+    pass
