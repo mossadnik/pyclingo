@@ -7,6 +7,10 @@ from .core import Identifier, Variable, Number, String, Relation, Rule, Constrai
 def generate(obj):
     if isinstance(obj, (Identifier, Variable)):
         return obj.name
+    elif isinstance(obj, str):
+        return json.dumps(obj)
+    elif isinstance(obj, int):
+        return str(obj)
     elif isinstance(obj, Number):
         return str(obj.value)
     elif isinstance(obj, String):

@@ -17,7 +17,7 @@ def deserialize_symbol(symbol, function_cls: dict[str, type]) -> typ.Union[Relat
     elif symbol.type is SymbolType.String:
         value = symbol.string.replace('"', '\\"')
         try:
-            return json.loads(value)
+            return json.loads(f'"{value}"')
         except json.JSONDecodeError:
             raise ValueError(f'Failed to decode string constant: {symbol.string}')
     elif symbol.type is SymbolType.Number:

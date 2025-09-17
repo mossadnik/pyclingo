@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyclingo"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Matthias Ossadnik <ossadnik.matthias@gmail.com>"]
 readme = "README.md"
@@ -13,6 +13,10 @@ attrs = "^25.3.0"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.1.1"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.4.2"
 
 [build-system]
 requires = ["poetry-core"]
