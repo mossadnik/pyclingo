@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pyclingo"
+version = "0.1.0"
+description = ""
+authors = ["Matthias Ossadnik <ossadnik.matthias@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+clingo = ">=5.8,<6.0"
+attrs = "^25.3.0"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

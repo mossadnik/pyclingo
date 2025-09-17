@@ -1,0 +1,22 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+
+# build
+dist/
+
+# testing
+htmlcov/
+.pytest_cache/
+.coverage
+
+# jupyter
+*.ipynb
+.ipynb_checkpoints/
+
+# editor
+.vscode/
+
+
+scratch/
