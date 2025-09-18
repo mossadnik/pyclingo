@@ -3,6 +3,7 @@ from pyclingo.api import relation, symbol, solve, lit
 from pyclingo.core import Number, String, Constraint
 from pyclingo.exceptions import Unsat
 
+
 def test_roundtrip():
     @relation
     class connected:

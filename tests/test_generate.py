@@ -1,6 +1,5 @@
 import pytest
 from pyclingo.generate import generate_statement
-from pyclingo.core import BinaryOperatorType
 from pyclingo.api import var, lit
 
 

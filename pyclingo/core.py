@@ -95,4 +95,4 @@ class Rule:
 
 @define(frozen=True)
 class Constraint:
-    body: tuple[typ.Union[Atom, Expression]]
+    body: typ.Sequence[typ.Union[Atom, Expression]]
